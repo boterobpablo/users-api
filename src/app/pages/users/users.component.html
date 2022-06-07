@@ -1,0 +1,65 @@
+<app-banner [title]="'Users'"></app-banner>
+
+<app-spinner *ngIf="users.length === 0"></app-spinner>
+
+<section class="dialog" *ngIf="showDialog">
+    <ul>
+        <li><span>Name: </span>{{user.name}}</li>
+        <li><span>Username: </span>{{user.username}}</li>
+        <li><span>Email: </span>{{user.email}}</li>
+    </ul>
+    <button (click)="showDialog = false">Close</button>
+</section>
+
+<section class="users-table" *ngIf="users.length > 0">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </table>
+</section>
+
+<section class="get-new-user">
+    <h4>Get user by ID</h4>
+    <span>
+        <p>1</p>
+        <p>{{valueRange}}</p>
+        <p>10</p>
+    </span>
+    <form (ngSubmit)="getUser()" #getUserForm="ngForm">
+        <input type="range" name="getRange" min="1" max="10" 
+            [(ngModel)]="valueRange">
+        <input type="submit" value="Go!">
+    </form>
+</section>
+
+<section class="createUserInfo">
+    <h4>Create User</h4>
+    <form (ngSubmit)="postUser()" #createUserForm="ngForm" 
+        autocomplete="off">
+        <input type="text" name="name" (ngModel)="user.name" 
+            placeholder="Name..." required minlength="3">
+        <span *ngIf="invalidName()">
+            Name must be at least 3 characters
+        </span>
+        <input type="text" name="username" (ngModel)="user.username" 
+        placeholder="Username..." required minlength="3">
+        <span *ngIf="invalidUsername()">
+            Username must be at least 3 characters
+        </span>
+        <input type="email" name="email" (ngModel)="user.email" 
+        placeholder="Email..." required>
+        <span *ngIf="invalidEmail()">
+            Email not valid
+        </span>
+        <input type="submit" value="Create" 
+            [disabled]="createUserForm.invalid">
+    </form>
+</section>

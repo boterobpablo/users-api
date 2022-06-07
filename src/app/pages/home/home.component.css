@@ -1,0 +1,15 @@
+.greeting{
+    text-align: center;
+    margin: 30px 0;
+    height: 100vh;
+}
+.greeting h2{
+    font-size: 50px;
+    color: var(--color-blue);
+    margin-bottom: 10px;
+}
+.greeting p{
+    font-size: 25px;
+    color: var(--color-black);
+    margin: 2px 0;
+}

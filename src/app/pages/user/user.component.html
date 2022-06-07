@@ -1,0 +1,39 @@
+
+<app-spinner *ngIf="!user"></app-spinner>
+
+<app-banner [title]="user.name" *ngIf="user"></app-banner>
+
+<section class="userInfo" *ngIf="user">
+    <div class="userInfo__image">
+        <img src="../../../assets/images/profile.png" alt="No profile photo">
+    </div>
+    <div class="userInfo__info">
+        <h3>Basic Information</h3>
+        <p>
+            <span>ID: </span> 
+            <span>{{user.id}}</span>
+        </p>
+        <p>
+            <span>Name: </span> 
+            <span>{{user.name}}</span>
+        </p>
+        <p>
+            <span>Username: </span> 
+            <span>{{user.username}}</span>
+        </p>
+        <h3>Contact Information</h3>
+        <p>
+            <span>Email: </span> 
+            <span>{{user.email}}</span>
+        </p>
+        <p>
+            <span>Phone: </span> 
+            <span>{{user.phone}}</span>
+        </p>
+        <p>
+            <span>Email: </span> 
+            <span>{{user.website}}</span>
+        </p>
+    </div>
+</section>
+

@@ -1,0 +1,22 @@
+
+.footer{
+    display: grid;
+    place-items: center;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    height: 60px;
+    text-align: center;
+    font-size: 14px;
+}
+.footer__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.footer__container span:nth-child(1){
+    color: var(--color-black);
+}
+.footer__container span:nth-child(2){
+    font-size: 20px;
+}

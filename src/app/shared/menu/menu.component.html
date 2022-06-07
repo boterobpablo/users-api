@@ -1,0 +1,18 @@
+<header class="navbar">
+    <nav class="navbar__container">
+        <div class="navbar__image">
+            <img src="../favicon.ico" alt="angular">
+        </div>
+        <div class="navbar__menu">
+            <ul>
+                <li *ngFor="let item of items">
+                    <a [routerLink]='[item.link]'
+                        routerLinkActive="active"
+                        class="navbar__link">
+                        {{item.title}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

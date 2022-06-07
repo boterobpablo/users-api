@@ -1,0 +1,137 @@
+.users-table, .createUserInfo {
+    display: grid;
+    place-items: center;
+    margin: 50px 0;
+}
+
+:is(.users-table table) th,
+td {
+    border-bottom: 1px solid #ccc;
+    padding: 1em 1em;
+}
+
+.users-table table tr:nth-child(even) {
+    background: #f6f6f6;
+}
+
+.get-new-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    margin: 40px 0;
+}
+
+h4 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.get-new-user form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.get-new-user span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.get-new-user input[type="range"] {
+    width: 200px;
+}
+
+.get-new-user input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.get-new-user input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--color-blue);
+    cursor: pointer;
+}
+
+.get-new-user input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+input[type="submit"], button {
+    width: 100px;
+    background: var(--color-salmon);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px 0;
+}
+input[type="submit"]:hover, button:hover {
+    cursor: pointer;
+}
+.get-new-user span p:nth-child(2){
+    font-weight: bolder;
+}
+.createUserInfo form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+:is(.createUserInfo) input[type="text"], input[type="email"]{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+:is(.createUserInfo) input[type="text"]:focus, 
+input[type="email"]:focus{
+    outline: none;
+    border: 1px solid var(--color-blue);
+}
+.createUserInfo form span{
+    font-size: 12px;
+    color: var(--color-salmon);
+}
+.dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 10px;
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+    background: var(--color-white);
+    border-radius: 5px;
+    border: 2px solid var(--color-blue);
+}
+.dialog ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

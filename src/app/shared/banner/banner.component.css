@@ -1,0 +1,9 @@
+.banner{
+    text-align: center;
+    
+}
+.banner h1{
+    font-size: 3em;
+    margin: 30px;
+    color: var(--color-black);
+}
