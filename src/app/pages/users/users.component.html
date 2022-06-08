@@ -4,15 +4,15 @@
 
 <section class="dialog" *ngIf="showDialog">
     <ul>
-        <li><span>Name: </span>{{user.name}}</li>
-        <li><span>Username: </span>{{user.username}}</li>
-        <li><span>Email: </span>{{user.email}}</li>
+        <li><span>Name: </span><span>{{user.name}}</span></li>
+        <li><span>Username: </span><span>{{user.username}}</span></li>
+        <li><span>Email: </span><span>{{user.email}}</span></li>
     </ul>
-    <button (click)="showDialog = false">Close</button>
+    <button (click)="closeDialog()">Close</button>
 </section>
 
-<section class="users-table" *ngIf="users.length > 0">
-    <table>
+<section class="users-table">
+    <table *ngIf="users.length > 0">
         <tr>
             <th>Name</th>
             <th>Username</th>
@@ -45,21 +45,23 @@
     <form (ngSubmit)="postUser()" #createUserForm="ngForm" 
         autocomplete="off">
         <input type="text" name="name" (ngModel)="user.name" 
-            placeholder="Name..." required minlength="3">
+            placeholder="Name..." required minlength="3" maxlength="25"
+            title="This mesage is a proof">
         <span *ngIf="invalidName()">
             Name must be at least 3 characters
         </span>
         <input type="text" name="username" (ngModel)="user.username" 
-        placeholder="Username..." required minlength="3">
+        placeholder="Username..." required minlength="3" maxlength="20">
         <span *ngIf="invalidUsername()">
             Username must be at least 3 characters
         </span>
         <input type="email" name="email" (ngModel)="user.email" 
-        placeholder="Email..." required>
+            placeholder="Email..." required maxlength="40"
+            pattern="\w+@+\w+\.+[\w-]{2,4}$">
         <span *ngIf="invalidEmail()">
             Email not valid
         </span>
-        <input type="submit" value="Create" 
+        <input type="submit" value="Create" name="createSubmit" id="createSubmit"
             [disabled]="createUserForm.invalid">
     </form>
 </section>

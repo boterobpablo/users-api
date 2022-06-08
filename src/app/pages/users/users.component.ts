@@ -30,23 +30,33 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.usersService.getUsers()
       .subscribe(data => {
-        // this.users = data;
+        this.users = data;
       })
   }
 
+  // evento para detectar click fuera del dialog y cerrarlo
+  // eventCloseDialog = document.addEventListener("click", (event) => {
+  //   const dialog = document.querySelector('.dialog');
+  //   if (dialog?.contains(event.target as Node)) return
+  //   this.showDialog = false;
+  //   this.enableInputs();
+  // });
+
   invalidName() {
     return this.createUserForm?.controls['name']?.invalid
-      && this.createUserForm?.controls['name']?.touched;
+      && this.createUserForm?.controls['name']?.touched
   }
 
   invalidUsername() {
     return this.createUserForm?.controls['username']?.invalid
-      && this.createUserForm?.controls['username']?.touched;
+      && this.createUserForm?.controls['username']?.touched
   }
 
   invalidEmail() {
     return this.createUserForm?.controls['email']?.invalid
-      && this.createUserForm?.controls['email']?.touched;
+      && this.createUserForm?.controls['email']?.touched
+    // && (this.createUserForm?.controls['email']?.value)
+    //   .match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) !== null
   }
 
   getUser() {
@@ -63,17 +73,31 @@ export class UsersComponent implements OnInit {
     this.usersService.createUser(this.user)
       .subscribe(user => {
         console.log(user);
-        this.user.name = user.name;
-        this.user.username = user.username;
-        this.user.email = user.email;
-        console.log(this.user);
         this.showDialog = true;
+        this.createUserForm.resetForm();
+        // deshabilitar inputs y submit mientras esta dialog abierto
+        this.disableInputs()
+        const createSubmit = document.querySelector('#createSubmit');
+        createSubmit?.setAttribute('disabled', 'true');
       })
-    this.createUserForm.resetForm({
-      name: '',
-      username: '',
-      email: ''
-    });
+  }
+
+  disableInputs() {
+    this.createUserForm?.controls['name']?.disable();
+    this.createUserForm?.controls['username']?.disable();
+    this.createUserForm?.controls['email']?.disable();
+  }
+
+  enableInputs() {
+    this.createUserForm?.controls['name']?.enable();
+    this.createUserForm?.controls['username']?.enable();
+    this.createUserForm?.controls['email']?.enable();
+  }
+
+  closeDialog() {
+    this.showDialog = false;
+    this.enableInputs();
+    this.createUserForm.resetForm();
   }
 
 }
