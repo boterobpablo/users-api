@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-photos',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosComponent implements OnInit {
 
-  constructor() { }
+  photos: string[] = []
+
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
-  }
 
+    this.usersService.getUserImage().subscribe((data) => {
+        const users = data.results;
+        for (const user of users) {
+          const photo = user.picture.large
+          this.photos.push(photo);
+        }
+      })
+  }
 }

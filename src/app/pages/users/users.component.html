@@ -3,6 +3,9 @@
 <app-spinner *ngIf="users.length === 0"></app-spinner>
 
 <section class="dialog" *ngIf="showDialog">
+    <div class="dialog__title">
+        <h4>User created successfully</h4>
+    </div>
     <ul>
         <li><span>Name: </span><span>{{user.name}}</span></li>
         <li><span>Username: </span><span>{{user.username}}</span></li>
@@ -34,7 +37,7 @@
         <p>10</p>
     </span>
     <form (ngSubmit)="getUser()" #getUserForm="ngForm">
-        <input type="range" name="getRange" min="1" max="10" 
+        <input type="range" name="getRange" min="1" max="10" id="idSubmit" 
             [(ngModel)]="valueRange">
         <input type="submit" value="Go!">
     </form>

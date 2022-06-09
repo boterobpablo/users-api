@@ -1,1 +1,11 @@
-<p>posts works!</p>
+<app-banner [title]="'Posts'"></app-banner>
+
+<app-spinner *ngIf="posts.length === 0"></app-spinner>
+
+<main class="posts">
+    <article class="posts__container" *ngFor="let post of posts">
+        <span (click)="deletePost(post.id)">x</span>
+        <h4>{{post.title}}}</h4>
+        <p>{{post.body}}</p>
+    </article>
+</main>

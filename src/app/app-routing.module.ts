@@ -21,7 +21,7 @@ const routes: Routes = [
     component: UserComponent
   },
   {
-    path: 'photos',
+    path: 'gallery',
     component: PhotosComponent
   },
   {

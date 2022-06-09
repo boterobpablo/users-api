@@ -10,7 +10,7 @@ export class MenuComponent implements OnInit {
   items = [
     {title: 'Home', link: '/home'},
     {title: 'Users', link: '/users'},
-    {title: 'Photos', link: '/photos'},
+    {title: 'Gallery', link: '/gallery'},
     {title: 'Posts', link: '/posts'}
   ]
   

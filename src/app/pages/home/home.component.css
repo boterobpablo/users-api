@@ -1,15 +1,28 @@
 .greeting{
     text-align: center;
-    margin: 30px 0;
-    height: 100vh;
+    margin: 40px auto;
+    height: 90vh;
+    max-width: 1290px;
+    padding: 0 20px;
 }
-.greeting h2{
+.greeting__text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 80ch;
+    gap: 30px;
+    line-height: 1.5;
+}
+.greeting__text h2{
     font-size: 50px;
     color: var(--color-blue);
-    margin-bottom: 10px;
 }
-.greeting p{
+.greeting__text p{
     font-size: 25px;
     color: var(--color-black);
-    margin: 2px 0;
+}
+.greeting__text span{
+    font-weight: bold;
 }

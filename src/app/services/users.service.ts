@@ -4,6 +4,8 @@ import { environment } from '../../environments/environment';
 import { User } from '../interfaces/user';
 import { Observable } from 'rxjs';
 import { UserSmall } from '../interfaces/user-small';
+import { UserImage } from '../interfaces/user-image';
+import { Post } from '../interfaces/post';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +27,17 @@ export class UsersService {
 
   createUser(user: UserSmall): Observable<UserSmall> {
     return this.http.post<UserSmall>(`${this.baseUrl}users`, user);
+  }
+
+  getUserImage(): Observable<UserImage> {
+    return this.http.get<UserImage>('https://randomuser.me/api/?results=30')
+  }
+
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.baseUrl}posts?userId=1`);
+  }
+
+  deletePost(id: number): Observable<Post> {
+    return this.http.delete<Post>(`${this.baseUrl}posts/${id}`)
   }
 }

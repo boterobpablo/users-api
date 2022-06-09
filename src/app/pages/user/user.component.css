@@ -16,3 +16,7 @@
 .userInfo__info p span:nth-child(1){
     font-weight: bold;
 }
+.userInfo__image img{
+    width: 200px;
+    aspect-ratio: 1 / 1;
+}

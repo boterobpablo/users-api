@@ -1,1 +1,12 @@
-<p>photos works!</p>
+
+<app-banner [title]="'Gallery'"></app-banner>
+
+<app-spinner *ngIf="photos.length === 0"></app-spinner>
+
+<section class="gallery">
+    <div class="gallery__container">
+        <div class="gallery__image" *ngFor="let photo of photos">
+            <img [src]="photo" alt="">
+        </div>
+    </div>
+</section>

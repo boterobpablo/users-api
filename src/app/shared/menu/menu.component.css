@@ -2,14 +2,16 @@
     display: grid;
     place-items: center;
     background-color: var(--color-blue);
+
+    
 }
 .navbar__container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
     max-width: 1290px;
     width: 100%;
+    height: 80px;
     gap: 20px
 }
 .navbar__menu ul{

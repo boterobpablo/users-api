@@ -55,8 +55,6 @@ export class UsersComponent implements OnInit {
   invalidEmail() {
     return this.createUserForm?.controls['email']?.invalid
       && this.createUserForm?.controls['email']?.touched
-    // && (this.createUserForm?.controls['email']?.value)
-    //   .match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) !== null
   }
 
   getUser() {
@@ -72,13 +70,12 @@ export class UsersComponent implements OnInit {
     this.user.email = this.createUserForm?.controls['email']?.value;
     this.usersService.createUser(this.user)
       .subscribe(user => {
-        console.log(user);
         this.showDialog = true;
         this.createUserForm.resetForm();
         // deshabilitar inputs y submit mientras esta dialog abierto
         this.disableInputs()
-        const createSubmit = document.querySelector('#createSubmit');
-        createSubmit?.setAttribute('disabled', 'true');
+        const submits = document.querySelectorAll('input[type="submit"]');
+        submits.forEach(submit => submit.setAttribute('disabled', 'true'))
       })
   }
 
@@ -98,6 +95,8 @@ export class UsersComponent implements OnInit {
     this.showDialog = false;
     this.enableInputs();
     this.createUserForm.resetForm();
+    const submits = document.querySelectorAll('input[type="submit"]');
+    submits[0].removeAttribute('disabled')
   }
 
 }

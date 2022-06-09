@@ -12,6 +12,7 @@ import { UsersService } from '../../services/users.service';
 export class UserComponent implements OnInit {
   
   user!: User;
+  image: string = '';
 
   constructor(private activatedRoute: ActivatedRoute,
               private usersService: UsersService) { }
@@ -23,5 +24,9 @@ export class UserComponent implements OnInit {
         switchMap( ({ id }) => this.usersService.getUser(id) )
       )
       .subscribe( user => this.user = user );
+
+    this.usersService.getUserImage().subscribe( data => {
+      this.image = data.results[0].picture.large;
+    })
   }
 }
