@@ -19,9 +19,11 @@
     width: 100%;
     min-height: 80px;
 }
-.navbar__menu{
-    display:block;
+
+.navbar__menu {
+    display: flex;
 }
+
 .navbar__menu ul {
     display: flex;
     gap: 20px;
@@ -64,7 +66,8 @@ svg:hover {
         border-top: 1px solid var(--color-black);
         padding: 5px 0;
     }
-    .navbar__menu ul{
+
+    .navbar__menu ul {
         flex-direction: column;
     }
 
@@ -72,9 +75,3 @@ svg:hover {
         justify-content: space-around;
     }
 }
-@media screen and (min-width: 416px) {
-    .navbar__menu {
-        display: block;
-    }
-}
-    

@@ -30,11 +30,11 @@ export class MenuComponent implements OnInit {
     this.toggleMenu(menu, 'none', false);
   });
   
-  /* evento para detectar cambio del ancho de la pantalla del 
-  cliente y cerrar o abrir el menu segun el ancho */
+  /* evento para detectar cambio del ancho de la pantalla
+  y cerrar o abrir el menu segun el ancho */
   windowWidth = window.addEventListener('resize', () => {
     const menu = this.getlement('.navbar__menu');
-    document.body.clientWidth > 415 
+    window.innerWidth > 415
       ? this.toggleMenu(menu, 'flex', true)
       : this.toggleMenu(menu, 'none', false)
   })
