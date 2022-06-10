@@ -20,7 +20,7 @@
 }
 .greeting__text h2{
     font-size: 50px;
-    color: var(--color-blue);
+    color: var(--color-primary);
 }
 .greeting__text p{
     font-size: 25px;

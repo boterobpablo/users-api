@@ -6,8 +6,11 @@
 }
 
 :root{
-    --color-blue: #50B2C0;
+    --color-primary: #50B2C0;
+    --color-secondary: #D7FCB4;
     --color-white: #FEEFDD;
-    --color-salmon: #FAAA8D;
     --color-black: #201E1F;
+    --color-salmon: #FAAA8D;
+    --color-green: #D7FCB4;
+    --color-pink: #FDCFF3;
 }

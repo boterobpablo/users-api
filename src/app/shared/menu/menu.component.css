@@ -1,11 +1,11 @@
 .activeLink {
-    color: var(--color-salmon) !important;
+    color: var(--color-secondary) !important;
 }
 
 .navbar {
     display: grid;
     place-items: center;
-    background-color: var(--color-blue);
+    background-color: var(--color-primary);
     width: 100%;
 }
 
@@ -40,7 +40,7 @@
 
 .navbar__menu a:hover {
     cursor: pointer;
-    color: var(--color-salmon);
+    color: var(--color-secondary);
 }
 
 .toggle-button {
@@ -73,7 +73,7 @@
         position: absolute;
         justify-content: center;
         top: 80px;
-        background-color: var(--color-blue);
+        background-color: var(--color-primary);
         width: 100%;
         border-top: 1px solid var(--color-black);
         padding: 10px 0;
