@@ -1,7 +1,7 @@
 .greeting{
     text-align: center;
     margin: 40px auto;
-    height: 90vh;
+    min-height: 85vh;
     max-width: 1290px;
     padding: 0 20px;
 }
@@ -25,4 +25,19 @@
 }
 .greeting__text span{
     font-weight: bold;
+}
+.greeting__user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
+}
+.greeting__user img{
+    border-radius: 50%;
+    border: 2px solid var(--color-black);
+}
+.greeting__user p{
+    max-width: 50ch;
 }

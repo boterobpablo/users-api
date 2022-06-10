@@ -12,7 +12,7 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './shared/menu/menu.component';
-import { PhotosComponent } from './pages/photos/photos.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { UsersComponent } from './pages/users/users.component';
@@ -25,7 +25,7 @@ import { UserComponent } from './pages/user/user.component';
     FooterComponent,
     HomeComponent,
     MenuComponent,
-    PhotosComponent,
+    GalleryComponent,
     PostsComponent,
     SpinnerComponent,
     UsersComponent,

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
-import { PhotosComponent } from './pages/photos/photos.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { UserComponent } from './pages/user/user.component';
 import { UsersComponent } from './pages/users/users.component';
@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'gallery',
-    component: PhotosComponent
+    component: GalleryComponent
   },
   {
     path: 'posts',

@@ -3,10 +3,10 @@ import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-photos',
-  templateUrl: './photos.component.html',
-  styleUrls: ['./photos.component.css']
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
 })
-export class PhotosComponent implements OnInit {
+export class GalleryComponent implements OnInit {
 
   photos: string[] = []
 

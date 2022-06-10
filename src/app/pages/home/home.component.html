@@ -5,7 +5,7 @@
         <div class="greeting__text">
             <h2>HI!</h2>
             <p>
-                We are trying <br>
+                We are trying...<br>
                 <span>JSON PLACEHOLDER</span> <br>
                 Free fake API for testing and prototyping. <br>
             </p>
@@ -15,8 +15,11 @@
             </p>
         </div>
 
+        <app-spinner *ngIf="!user && !image"></app-spinner>
+
         <div class="greeting__user">
-            <img src="" alt="user picture">
+            <img [src]="image" alt="">
+            <p>{{user | json}}</p>
         </div>
     </div>
 </main>
