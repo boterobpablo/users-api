@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, AfterViewInit {
 
   items = [
     { title: 'Home', link: '/home' },
@@ -13,48 +13,38 @@ export class MenuComponent implements OnInit {
     { title: 'Gallery', link: '/gallery' },
     { title: 'Posts', link: '/posts' }
   ]
-  showMenuDisplay: boolean = false;
+  showMenuDisplay: boolean = false
+
+
+  /* hacer referencia a un elemento del HTML y usarlo como una 
+  propiedad, toma el elemento con referencia local */
+  @ViewChild('toggle_button') toggleButton!: ElementRef
+  @ViewChild('navbar__menu') navbarMenu!: ElementRef
+
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  // evento para detectar click y cerrarlo el menu
-  closeMenu = document.addEventListener("click", (event) => {
-    if (document.body.clientWidth > 415) return
-    if (!this.showMenuDisplay) return
-    const menuIcon = this.getlement('.navbar__menuIcon');
-    if (menuIcon?.contains(event.target as Node)) return
-    const menu = this.getlement('.navbar__menu');
-    this.toggleMenu(menu, 'none', false);
-  });
-  
-  /* evento para detectar cambio del ancho de la pantalla
-  y cerrar o abrir el menu segun el ancho */
-  windowWidth = window.addEventListener('resize', () => {
-    const menu = this.getlement('.navbar__menu');
-    window.innerWidth > 415
-      ? this.toggleMenu(menu, 'flex', true)
-      : this.toggleMenu(menu, 'none', false)
-  })
-  
-  showMenu() {
-    const menu = this.getlement('.navbar__menu');
-    if (!this.showMenuDisplay) {
-      this.toggleMenu(menu, 'flex', true);
-      return
-    }
-    this.toggleMenu(menu, 'none', false);
-  }
-  
-  getlement(id: string) {
-    return document.querySelector(id) as HTMLElement;
-  }
 
-  toggleMenu = (element: HTMLElement, display: string, boolean: boolean): void => {
-    element.style.display = display;
-    this.showMenuDisplay = boolean;
+  /* se inicializan las constantes para las referencias que se tomaron 
+  y se inicializan aqui porque este metodo se ejecuta despues de que
+  la vista se ha cargado */
+  ngAfterViewInit() {
+    const toggleButtonElem = this.toggleButton.nativeElement
+    const navbarElem = this.navbarMenu.nativeElement
+
+    const toggleMenu = toggleButtonElem.addEventListener('click', () => {
+        navbarElem.classList.toggle('active')
+      })
+    toggleMenu
+
+    // evento para detectar click y cerrar el menu
+    const closeMenu = document.addEventListener("click", (event) => {
+      if (toggleButtonElem.contains(event.target as Node)) return
+      if (navbarElem.classList.contains('active')) navbarElem.classList.toggle('active')
+    });
+    closeMenu
   }
 
 }

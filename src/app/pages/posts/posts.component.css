@@ -3,11 +3,12 @@
     margin: 40px auto;
     padding: 0 20px;
     display: grid;
-    place-items: start;
+    place-content: start;
+    place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
     gap: 30px;
     max-width: 1290px;
-    min-height: 90vh;
+    min-height: 80vh;
 }
 .posts__container{
     position: relative;

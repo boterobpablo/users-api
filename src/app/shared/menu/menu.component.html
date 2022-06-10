@@ -4,21 +4,22 @@
             <img src="../../../favicon.ico" alt="">
         </div>
 
-        <div class="navbar__menu">
+        <div class="navbar__menu" #navbar__menu>
             <ul>
                 <li *ngFor="let item of items">
-                    <a [routerLink]='[item.link]' routerLinkActive="active" class="navbar__link">
+                    <a [routerLink]='[item.link]' 
+                       routerLinkActive="activeLink" 
+                       class="navbar__link">
                         {{item.title}}
                     </a>
                 </li>
             </ul>
         </div>
 
-        <div class="navbar__menuIcon" (click)="showMenu()">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="30px" height="30px" viewBox="0 0 100 100">
-                <path stroke-width="24" stroke-linecap="round" stroke="#000" d="M15 20L85 20M15 50L85 50M15 80L85 80" />
-            </svg>
+        <div class="toggle-button" #toggle_button>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
     </nav>
 </header>

@@ -2,7 +2,7 @@
 .userInfo{
     display: grid;
     place-items: center;
-    margin: 60px 0;
+    margin: 80px 0;
     gap: 20px;
 }
 .userInfo__info h3{
