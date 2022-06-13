@@ -1,8 +1,6 @@
 [build]
-    command = "npm run build"
-    publish = "/docs"
-    base = "/"
-
+    command = "ng build --prod"
+    publish = "dist/users-apis"
 [[redirects]]
     from = "/*"
     to = "/index.html"
