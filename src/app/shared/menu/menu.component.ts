@@ -11,8 +11,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
     { title: 'Home', link: '/home' },
     { title: 'Users', link: '/users' },
     { title: 'Gallery', link: '/gallery' },
-    { title: 'Posts', link: '/posts' },
-    { title: 'Prueba', link: '/prueba' }
+    { title: 'Posts', link: '/posts' }
   ]
   showMenuDisplay: boolean = false
 

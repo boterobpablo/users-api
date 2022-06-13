@@ -17,7 +17,6 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './pages/user/user.component';
-import { PruebaComponent } from './pages/prueba/prueba.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { PruebaComponent } from './pages/prueba/prueba.component';
     SpinnerComponent,
     UsersComponent,
     UserComponent,
-    PruebaComponent,
   ],
   imports: [
     BrowserModule,
