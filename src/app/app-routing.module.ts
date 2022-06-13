@@ -6,6 +6,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { UserComponent } from './pages/user/user.component';
 import { UsersComponent } from './pages/users/users.component';
+import { PruebaComponent } from './pages/prueba/prueba.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'posts',
     component: PostsComponent
+  },
+  {
+    path: 'prueba',
+    component: PruebaComponent
   },
   {
     path: '**',
