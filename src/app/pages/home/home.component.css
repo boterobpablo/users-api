@@ -1,35 +1,39 @@
-.greeting{
+.greeting {
     text-align: center;
     margin: 40px auto;
     min-height: 85vh;
     max-width: 1290px;
     padding: 0 20px;
 }
-.greeting__text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.greeting__text {
     margin: 0 auto;
     max-width: 80ch;
-    gap: 30px;
     line-height: 1.5;
 }
-.greeting__text p a{
-    font-size: 15px;
+
+.greeting__text h2 {
+    font-size: 22px;
+    color: var(--color-black);
+    margin-top: 40px;
 }
-.greeting__text h2{
+
+.greeting__text h2 a {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.greeting__text h2 span {
+    font-size: 30px;
+}
+
+.greeting__text > span:nth-child(1) {
     font-size: 50px;
     color: var(--color-primary);
-}
-.greeting__text p{
-    font-size: 25px;
-    color: var(--color-black);
-}
-.greeting__text span{
     font-weight: bold;
 }
-.greeting__user{
+
+.greeting__user {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,10 +41,12 @@
     gap: 30px;
     margin: 50px 0;
 }
-.greeting__user img{
+
+.greeting__user img {
     border-radius: 50%;
     border: 2px solid var(--color-black);
 }
-.greeting__user p{
+
+.greeting__user p {
     max-width: 50ch;
 }

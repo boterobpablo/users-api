@@ -145,6 +145,7 @@ input[type="submit"],
 button {
     width: 100px;
     background: var(--color-secondary);
+    color: var(--color-white);
     border: none;
     border-radius: 5px;
     font-size: 18px;
