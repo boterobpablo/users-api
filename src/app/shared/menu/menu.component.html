@@ -1,28 +1,33 @@
+
 <header class="navbar">
-    <nav class="navbar__container">
-        <div class="navbar__image">
-            <a routerLink='/' 
-               routerLinkActive="activeLink">
-               <img src="../../../favicon.ico" alt="">
-            </a>
-        </div>
+	<nav class="navbar__container">
 
-        <div class="navbar__menu" #navbar__menu>
-            <ul>
-                <li *ngFor="let item of items">
-                    <a [routerLink]='[item.link]' 
-                       routerLinkActive="activeLink" 
-                       class="navbar__link">
-                        {{item.title}}
-                    </a>
-                </li>
-            </ul>
-        </div>
+		<div class="navbar__image">
+			<a routerLink="/" routerLinkActive="activeLink">
+				<img src="../../../favicon.ico" alt="" />
+			</a>
+		</div>
 
-        <div class="toggle-button" #toggle_button>
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </nav>
+
+		<div class="navbar__menu" #navbar__menu>
+			<ul>
+				<li *ngFor="let item of items">
+					<a class="navbar__link"
+						[routerLink]="[item.link]" 
+						routerLinkActive="activeLink"
+						[routerLinkActiveOptions]="{ exact: true }" >
+						{{ item.title }}
+					</a>
+				</li>
+			</ul>
+		</div>
+
+
+		<div class="toggle-button" #toggle_button>
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+
+	</nav>
 </header>

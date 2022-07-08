@@ -1,17 +1,18 @@
 
-.gallery{
+/* .gallery{
     max-width: 1290px;
     min-height: 90vh;
     margin: 50px auto;
     padding: 0 10px;
-}
-.gallery__container{
+} */
+.container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
     place-items: center;
+    margin: 60px auto;
 }
-.gallery__image img{
+.image img{
     border-radius: 50%;
     border: 2px solid var(--color-black);
 }

@@ -10,6 +10,7 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
 export class UsersComponent implements OnInit {
 
   @ViewChild('getUserForm') getUserForm!: NgForm;
@@ -20,6 +21,7 @@ export class UsersComponent implements OnInit {
     username: '',
     email: ''
   }
+
   users: User[] = [];
   valueRange: number = 5;
   showDialog: boolean = false;

@@ -1,4 +1,10 @@
 
+/*  
+============
+Create user form
+============ 
+*/
+
 .createUserInfo {
     display: grid;
     place-items: center;
@@ -31,6 +37,13 @@ input[type="email"]:focus {
     font-size: 12px;
     color: var(--color-secondary);
 }
+
+
+/*  
+============
+Dialog
+============ 
+*/
 
 .dialog {
     position: fixed;
@@ -73,6 +86,13 @@ input[type="email"]:focus {
 .dialog ul span:nth-child(1) {
     font-weight: bold;
 }
+
+
+/*  
+============
+Get user by ID
+============ 
+*/
 
 .get-new-user {
     display: flex;
@@ -158,11 +178,19 @@ button:hover {
     cursor: pointer;
 }
 
+
+/*  
+============
+user's table
+============ 
+*/
+
 .users-table {
     min-height: 500px;
     display: grid;
     place-items: center;
     margin: 50px 0;
+    font-size: clamp(0.75rem, 0.5rem + 1vw, 1rem);
 }
 
 :is(.users-table table) th,
@@ -175,8 +203,8 @@ td {
     background: #f6f6f6;
 }
 
-@media screen and (max-width: 470px) {
+/* @media screen and (max-width: 470px) {
     .users-table table td{
         font-size: 12px;
     }
-}    
+}     */

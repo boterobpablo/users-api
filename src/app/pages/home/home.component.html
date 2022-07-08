@@ -1,8 +1,12 @@
+
 <app-banner [title]="'Home'"></app-banner>
 
-<main class="greeting">
-    <div class="greeting__container">
-        <div class="greeting__text">
+
+<main class="wrapper">
+    <!-- class container is defined globally in styles.css  -->
+    <div class="container">
+
+        <section class="text">
             <span>HI!&#9995;</span>
             <h2>
                 We are trying...<br>
@@ -19,13 +23,17 @@
                     randomuser.me
                 </a>
             </h2>
-        </div>
-
+        </section>
+        
+        
         <app-spinner *ngIf="!user && !image"></app-spinner>
-
-        <div class="greeting__user">
+        
+        
+        <section class="user">
             <img [src]="image" alt="">
             <p>{{user | json}}</p>
-        </div>
+        </section>
+   
     </div>
 </main>
+    

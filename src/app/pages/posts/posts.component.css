@@ -1,16 +1,13 @@
 
-.posts{
-    margin: 40px auto;
-    padding: 0 20px;
+.container{
     display: grid;
     place-content: start;
     place-items: stretch;
     grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
     gap: 30px;
-    max-width: 1290px;
-    min-height: 80vh;
 }
-.posts__container{
+
+.post{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -22,15 +19,15 @@
     padding: 20px;
     border-radius: 10px;
 }
-.posts__container h4{
+.post h4{
     text-align: center;
 }
-.posts__container span{
+.post span{
     position: absolute;
     top: 2px;
     right: 10px;
     padding: 0 5px;
 }
-.posts__container span:hover{
+.post span:hover{
     cursor: pointer;
 }

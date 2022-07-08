@@ -2,10 +2,15 @@
 
 <app-spinner *ngIf="posts.length === 0"></app-spinner>
 
-<main class="posts">
-    <article class="posts__container" *ngFor="let post of posts">
-        <span (click)="deletePost(post.id)">x</span>
-        <h4>{{post.title}}}</h4>
-        <p>{{post.body}}</p>
-    </article>
+
+
+<main class="wrapper">
+    <!-- class container is defined globally in styles.css  -->
+    <div class="container">
+        <article class="post" *ngFor="let post of posts">
+            <span (click)="deletePost(post.id)">x</span>
+            <h4>{{post.title}}}</h4>
+            <p>{{post.body}}</p>
+        </article>
+    </div>
 </main>

@@ -8,7 +8,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 export class MenuComponent implements OnInit, AfterViewInit {
 
   items = [
-    { title: 'Home', link: '/home' },
+    { title: 'Home', link: '/' },
     { title: 'Users', link: '/users' },
     { title: 'Gallery', link: '/gallery' },
     { title: 'Posts', link: '/posts' }
