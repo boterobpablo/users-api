@@ -1,9 +1,10 @@
 .banner{
     text-align: center;
-    
 }
+
 .banner h1{
-    font-size: 3em;
+    /* font-size: 3em; */
+    font-size: clamp(2em, 2.25rem + 1.5vw, 3em);
     margin: 30px;
     color: var(--color-black);
 }

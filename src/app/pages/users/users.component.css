@@ -190,7 +190,7 @@ user's table
     display: grid;
     place-items: center;
     margin: 50px 0;
-    font-size: clamp(0.75rem, 0.5rem + 1vw, 1rem);
+    font-size: clamp(0.625rem, 0.5rem + 1vw, 1rem);
 }
 
 :is(.users-table table) th,
@@ -203,7 +203,8 @@ td {
     background: #f6f6f6;
 }
 
-/* @media screen and (max-width: 470px) {
+/* 
+@media screen and (max-width: 470px) {
     .users-table table td{
         font-size: 12px;
     }
