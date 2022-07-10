@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
@@ -11,7 +11,7 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./users.component.css']
 })
 
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, AfterViewInit {
 
   @ViewChild('getUserForm') getUserForm!: NgForm;
   @ViewChild('createUserForm') createUserForm!: NgForm;
@@ -25,9 +25,14 @@ export class UsersComponent implements OnInit {
   users: User[] = [];
   valueRange: number = 5;
   showDialog: boolean = false;
+  submits!: NodeListOf<Element>
 
-  constructor(private usersService: UsersService,
-    private router: Router) { }
+
+  constructor(
+    private usersService: UsersService,
+    private router: Router
+  ) { }
+
 
   ngOnInit(): void {
     this.usersService.getUsers()
@@ -35,6 +40,12 @@ export class UsersComponent implements OnInit {
         this.users = data;
       })
   }
+
+  ngAfterViewInit(): void {
+    this.submits = document.querySelectorAll('input[type="submit"]');
+  }
+
+
 
   // evento para detectar click fuera del dialog y cerrarlo
   // eventCloseDialog = document.addEventListener("click", (event) => {
@@ -73,32 +84,30 @@ export class UsersComponent implements OnInit {
     this.usersService.createUser(this.user)
       .subscribe(user => {
         this.showDialog = true;
-        this.createUserForm.resetForm();
         // deshabilitar inputs y submit mientras esta dialog abierto
         this.disableInputs()
-        const submits = document.querySelectorAll('input[type="submit"]');
-        submits.forEach(submit => submit.setAttribute('disabled', 'true'))
+        this.submits.forEach(submit => submit.toggleAttribute('disabled'))
       })
   }
 
+  
+  closeDialog() {
+    this.showDialog = false;
+    this.createUserForm.resetForm();
+    this.enableInputs();
+    this.submits[0].toggleAttribute('disabled')
+  }
+
+  
   disableInputs() {
     this.createUserForm?.controls['name']?.disable();
     this.createUserForm?.controls['username']?.disable();
     this.createUserForm?.controls['email']?.disable();
   }
-
+  
   enableInputs() {
     this.createUserForm?.controls['name']?.enable();
     this.createUserForm?.controls['username']?.enable();
     this.createUserForm?.controls['email']?.enable();
   }
-
-  closeDialog() {
-    this.showDialog = false;
-    this.enableInputs();
-    this.createUserForm.resetForm();
-    const submits = document.querySelectorAll('input[type="submit"]');
-    submits[0].removeAttribute('disabled')
-  }
-
 }

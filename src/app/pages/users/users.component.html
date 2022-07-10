@@ -9,22 +9,24 @@
     <!-- class container is defined globally in styles.css  -->
     <div class="container">
 
-        <section class="dialog" *ngIf="showDialog">
-            <div class="dialog__title">
-                <h4>User created successfully</h4>
+        <section class="dialog-container" *ngIf="showDialog">
+            <div class="dialog" >
+                <div class="dialog-title">
+                    <h4>User created successfully</h4>
+                </div>
+                <ul>
+                    <li>
+                        <span>Name: </span><span>{{ user.name }}</span>
+                    </li>
+                    <li>
+                        <span>Username: </span><span>{{ user.username }}</span>
+                    </li>
+                    <li>
+                        <span>Email: </span><span>{{ user.email }}</span>
+                    </li>
+                </ul>
+                <button (click)="closeDialog()">Close</button>
             </div>
-            <ul>
-                <li>
-                    <span>Name: </span><span>{{ user.name }}</span>
-                </li>
-                <li>
-                    <span>Username: </span><span>{{ user.username }}</span>
-                </li>
-                <li>
-                    <span>Email: </span><span>{{ user.email }}</span>
-                </li>
-            </ul>
-            <button (click)="closeDialog()">Close</button>
         </section>
 
 
