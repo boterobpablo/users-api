@@ -17,6 +17,7 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './pages/user/user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { UserComponent } from './pages/user/user.component';
     HttpClientModule,
     FormsModule,
     RouterModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
