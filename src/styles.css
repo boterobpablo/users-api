@@ -43,6 +43,6 @@ button:hover {
 }
 
 input:disabled{
-    color: #b3b3b3;
-    background:#6c5b77;
+    color: #636363;
+    background:#d3d3d3;
 }
