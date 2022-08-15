@@ -4,23 +4,6 @@ h4 {
     margin-bottom: 20px;
 }
 
-input[type="submit"],
-button {
-    width: 100px;
-    background: var(--color-secondary);
-    color: var(--color-white);
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 5px 0;
-    box-shadow: 0 0 5px #ccc;
-}
-
-input[type="submit"]:hover,
-button:hover {
-    cursor: pointer;
-}
-
 /*  
 ============
 Create user form

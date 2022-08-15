@@ -9,27 +9,6 @@
     <!-- class container is defined globally in styles.css  -->
     <div class="container">
 
-        <section class="dialog-container" *ngIf="showDialog">
-            <div class="dialog" >
-                <div class="dialog-title">
-                    <h4>User created successfully</h4>
-                </div>
-                <ul>
-                    <li>
-                        <span>Name: </span><span>{{ user.name }}</span>
-                    </li>
-                    <li>
-                        <span>Username: </span><span>{{ user.username }}</span>
-                    </li>
-                    <li>
-                        <span>Email: </span><span>{{ user.email }}</span>
-                    </li>
-                </ul>
-                <button (click)="closeDialog()">Close</button>
-            </div>
-        </section>
-
-
         <section class="users-table">
             <table *ngIf="users.length > 0">
                 <tr>
@@ -73,7 +52,7 @@
                 <input
                 type="text"
                 name="name"
-                (ngModel)="(user.name)"
+                [(ngModel)]=user.name
                 placeholder="Name..."
                 required
                 minlength="3"
@@ -87,7 +66,7 @@
                 <input
                 type="text"
                 name="username"
-                (ngModel)="(user.username)"
+                [(ngModel)]=user.username
                 placeholder="Username..."
                 required
                 minlength="3"
@@ -100,7 +79,7 @@
                 <input
                 type="email"
                 name="email"
-                (ngModel)="(user.email)"
+                [(ngModel)]=user.email
                 placeholder="Email..."
                 required
                 maxlength="40"

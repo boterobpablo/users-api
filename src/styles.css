@@ -24,3 +24,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+input[type="submit"],
+button {
+    width: 100px;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px 0;
+    box-shadow: 0 0 5px #ccc;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    cursor: pointer;
+}
